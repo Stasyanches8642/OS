@@ -11,8 +11,8 @@ do
 if [ -f "$pid/status" ]
 then
 nm_pid=$(basename "$pid")
-nm=$(grep -E '^Name:' "$pid/status" | awk '{pront $2}')
-rss=$(grep -E '^VmRSS:' "$pid/status" | awk '{pront $2}')
+nm=$(grep -E '^Name:' "$pid/status" | awk '{print $2}')
+rss=$(grep -E '^VmRSS:' "$pid/status" | awk '{print $2}')
 
 if [ -n "$rss" ] && [ "$rss" -gt "$maximum" ]
 then
